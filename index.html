@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#101c2a" />
+  <title>Blockwild — Tiny Worlds, Big Adventures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="game" aria-label="Blockwild 2D sandbox game"></canvas>
+    <div class="topbar">
+      <div class="brand"><div class="brand-mark">▦</div><div><span class="brand-name">BLOCKWILD</span><small>tiny worlds, big adventures</small></div></div>
+      <div class="world-chip"><span class="live-dot"></span><span id="world-name">SUNMEADOW</span><span class="chip-divider"></span><span id="clock">DAY 01 · 09:00</span></div>
+      <button class="icon-btn" id="sound-btn" title="Toggle sound" aria-label="Toggle sound">♪</button>
+    </div>
+    <div class="quest-card">
+      <div class="quest-icon">✦</div><div class="quest-copy"><span class="eyebrow">A LITTLE ADVENTURE</span><strong id="quest-title">Make yourself at home</strong><small id="quest-subtitle">Gather wood and shape your world.</small></div>
+      <div class="quest-progress"><span id="quest-count">0 / 5</span><div class="progress-track"><i id="progress-fill"></i></div></div>
+    </div>
+    <div class="stats-card"><div class="stat-label"><span>❤</span> VITALS</div><div class="stat-row"><span class="stat-icon">♥</span><div class="meter"><i id="health-fill"></i></div><b id="health-value">100</b></div><div class="stat-row"><span class="stat-icon food">◈</span><div class="meter food-meter"><i id="food-fill"></i></div><b id="food-value">100</b></div></div>
+    <div class="toast" id="toast"></div>
+    <div class="center-message" id="center-message"><div class="message-card"><span class="message-kicker">WELCOME TO</span><h1>Blockwild<span>.</span></h1><p>A little patch of wild is yours to shape.</p><div class="message-controls"><span>⌨ <b>A / D</b> move</span><span>⤒ <b>SPACE</b> jump</span><span>⛏ <b>CLICK</b> gather</span></div><button id="play-btn" class="primary-btn">LET'S PLAY <span>→</span></button><small>Your world is saved on this device.</small></div></div>
+    <div class="inventory-panel" id="inventory-panel" aria-hidden="true"><div class="panel-head"><div><span class="eyebrow">YOUR BACKPACK</span><h2>Inventory</h2></div><button class="close-btn" id="close-inventory" aria-label="Close inventory">×</button></div><div class="inventory-grid" id="inventory-grid"></div><div class="recipe-box"><div><span class="eyebrow">QUICK CRAFT</span><strong>Wooden planks</strong><small>Turn logs into building blocks</small></div><button id="craft-btn" class="craft-btn">CRAFT <span>× 4</span></button></div><p class="panel-hint">Press <b>E</b> or <b>Esc</b> to close · Choose a slot, then place it in the world</p></div>
+    <div class="bottom-ui"><div class="hint-pill"><span class="mouse-hint">◉</span><span><b>Left click</b> gather</span><i></i><span><b>Right click</b> place</span><i></i><kbd>E</kbd><span>bag</span></div><div id="hotbar" class="hotbar" aria-label="Hotbar"></div><button class="bag-btn" id="bag-btn"><span>▣</span> <b>BAG</b> <kbd>E</kbd></button></div>
+    <div class="touch-controls"><button data-control="left" aria-label="Move left">◀</button><button data-control="right" aria-label="Move right">▶</button><button data-control="jump" aria-label="Jump">▲</button><button data-control="mine" aria-label="Gather">⛏</button><button data-control="place" aria-label="Place block">▧</button></div>
+    <div class="world-label">A PROCEDURALLY GROWN LITTLE WORLD <span>•</span> SEED 0418</div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
